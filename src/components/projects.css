@@ -1,0 +1,117 @@
+.projects {
+  --bg: #07130d;
+  --green: #39ff88;
+  --green-soft: #8affb7;
+  background: var(--bg);
+  color: #eafff1;
+  font-family: "JetBrains Mono", monospace;
+  padding: 6rem 0 5rem;
+  border-top: 1px solid rgba(57,255,136,.2);
+}
+.projects-title {
+  font-family: "Orbitron", sans-serif; font-weight: 700; letter-spacing: .12em;
+  color: var(--green);
+  text-shadow: 0 0 12px rgba(57,255,136,.5);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+}
+.projects-title::before { 
+  content: "~$ ls ./projects"; 
+  display: block; 
+  font-family: "JetBrains Mono", monospace; 
+  font-weight: 400; 
+  font-size: .8rem; 
+  letter-spacing: 0; 
+  color: rgba(168,216,187,.6); 
+  text-shadow: none;
+  margin-bottom: .5rem; 
+}
+
+.project-card {
+  display: flex; 
+  flex-direction: column; 
+  height: 100%;
+  background: rgba(7,19,13,.7);
+  border: 1px solid rgba(57,255,136,.25);
+  border-radius: 1rem;
+  padding: 1.4rem;
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+}
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-6px);
+  border-color: rgba(57,255,136,.6);
+  background: rgba(57,255,136,.05);
+  box-shadow: 0 12px 32px -8px rgba(57,255,136,.25), 0 0 0 1px rgba(57,255,136,.15);
+  outline: none;
+}
+
+.project-top {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  font-size: .72rem; 
+  letter-spacing: .08em;
+  border-bottom: 1px solid rgba(57,255,136,.15);
+  padding-bottom: .6rem;
+  margin-bottom: 1rem;
+}
+.project-id { 
+  color: rgba(168,216,187,.6); 
+}
+.project-open { 
+  color: rgba(57,255,136,.55); 
+  opacity: 0; 
+  transition: opacity .25s ease; 
+}
+.project-card:hover .project-open,
+.project-card:focus-visible .project-open { 
+  opacity: 1; 
+}
+
+.project-name {
+  font-size: 1.05rem; 
+  font-weight: 500; 
+  letter-spacing: .04em;
+  color: #eafff1; 
+  margin-bottom: .6rem;
+  transition: color .25s ease, 
+  text-shadow .25s ease;
+}
+.project-card:hover .project-name,
+.project-card:focus-visible .project-name { 
+  color: var(--green); 
+  text-shadow: 0 0 10px rgba(57,255,136,.45); 
+}
+
+.project-desc { 
+  color: #a8d8bb; 
+  font-size: .85rem; 
+  line-height: 1.7; 
+  margin-bottom: 1.2rem; 
+}
+
+.project-tech {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: .5rem;
+  border-top: 1px dashed rgba(57,255,136,.2);
+  padding-top: .9rem;
+}
+.tech-pill {
+  font-size: .7rem; 
+  color: var(--green-soft);
+  border: 1px solid rgba(57,255,136,.3); 
+  border-radius: 2rem;
+  padding: .28rem .75rem;
+  background: rgba(57,255,136,.06);
+  white-space: nowrap;
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.project-card:hover .tech-pill {
+  background: rgba(57,255,136,.12);
+}
+.tech-pill:hover {
+  box-shadow: 0 0 10px rgba(57,255,136,.4);
+  background: rgba(57,255,136,.18);
+}
